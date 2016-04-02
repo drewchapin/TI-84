@@ -1,0 +1,64 @@
+PROGRAM:FACTOR
+:ClrHome
+:
+:Input "A=",A
+:Input "B=",B
+:Input "C=",C
+:
+:A*C->D
+:0->E
+:0->F
+:
+:While abs(E)<abs(D)
+:
+:If B<0:Then
+:E-1->E
+:Else
+:E+1->E
+:End
+:
+:(B-E)->F
+:
+:If E*F=D and E+F=B:Then
+:
+:gcd(abs(A),abs(F))->H
+:gcd(abs(C),abs(E))->M
+:gcd(abs(A),abs(E))->R
+:gcd(abs(C),abs(F))->W
+:
+:ClrDraw
+:AxesOff
+:
+:If D<0 and B=1:Then
+:Text(1,1,"(",H,"X+",M,")(",R,"X-",W,")")
+:Else:If D<0 not(B=1):Then
+:Text(1,1,"(",H,"X-",M,")(",R,"X+",W,")")
+:Else:If B<0 and D>0:Then
+:Text(1,1,"(",H,"X-",M,")(",R,"X-",W,")")
+:Else
+:Text(1,1,"(",H,"X+",M,")(",R,"X+",W,")")
+:End
+:End
+:End
+:
+:Goto 1
+:
+:End
+:
+:End
+:
+:Disp "CAN NOT CALCULATE"
+:
+:Lbl 1
+:Pause
+:AxesOn
+:DelVar A
+:DelVar B
+:DelVar C
+:DelVar D
+:DelVar E
+:DelVar F
+:DelVar H
+:DelVar M
+:DelVar R
+:DelVar W

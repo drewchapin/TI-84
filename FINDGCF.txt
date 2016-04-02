@@ -1,0 +1,22 @@
+PROGRAM:FINDGF
+:ClrHome
+:
+:1->A
+:0->B
+:
+:While A>0
+:Input A
+:If B=0:Then
+:A->B
+:End
+:
+:gcd(abs(A),abs(B))->B
+:
+:Disp B
+:
+:End
+:
+:ClrHome
+:
+:DelVar A
+:DelVar B

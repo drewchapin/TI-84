@@ -1,0 +1,37 @@
+PROGRAM:FCTRMN
+:ClrHome
+:ClrDraw
+:AxesOff
+:
+:Input "M+N=",A
+:Input "M*N=",B
+:
+:0->M
+:0->N
+:
+:While abs(M)<abs(B)
+:
+:If A<0:Then
+:M-1->M
+:Else
+:M+1->M
+:End
+:
+:(A-M)->N
+:
+:If M*N=B:Then
+:Text(1,1,"M=",M)
+:Text(10,1,"N=",N)
+:Goto 1
+:End
+:
+:End
+:
+:Text(1,1,"CAN NOT CALCULATE")
+:
+:Lbl 1
+:Text(57,1,"MADE BY: DREW CHAPIN")
+:DelVar A
+:DelVar B
+:DelVar M
+:DelVar N

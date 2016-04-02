@@ -1,0 +1,86 @@
+:ClrDraw
+:ClrHome
+:AxesOff
+:
+:Disp "FACTORV4"
+:Disp "AX²+BX+C=0"
+:
+:Input "A=",A
+:Input "B=",B
+:Input "C=",C
+:
+:A+C->D
+:0->F
+:0->E
+:0->G
+:
+:While abs(E)<abs(D)
+:
+:  If B<0:Then
+:    E-1->E
+:  Else
+:    E+1->E
+:  End
+:  
+:  (B-E)->F
+:
+:  If E*F=D Then
+:    gcd(abs(A),abs(E))->H
+:    gcd(abs(C),abs(F))->M
+:    gcd(abs(A),abs(F))->R
+:    gcd(abs(C),abs(E))->W
+:
+:    If A<0:Then:(H*-1)->H:End
+:    If F<0:Then:(M*-1)->M:End
+:    If E<0:Then:(W*-1)->W:End
+:
+:    If A<0 and B>0 and C<0:Then:(H*-1)->H:(M*-1)->M:End
+:
+:    ClrDraw
+:
+:    If H=R and M=W:Then
+:      Text(1,1,"(",H,"X + ",M,")²")
+:    Else
+:
+:      gcd(gcd(gcd(abs(H),abs(M)),abs(R)),abs(W))->G
+:      Text(1,1,"(",H,"X + ",M,")(",R,"X + ",W,")=0")
+:
+:      If G>1:Then
+:        Text(8,1,G,"(",(H/G),"X + ",(M/G),")(",(R/G),"X + ",(W/G),")=0")
+:      End
+:
+:    End
+:
+:    Text(16,1,"X=",(-M)/H)
+:    Text(24,1,"X=",(-W)/R)
+:
+:    Goto 0
+:
+:  End
+:
+:End
+:
+:ClrDraw
+:Text(1,1,"CAN NOT CALCULATE")
+:
+:Lbl 0
+:Pause
+:ClrDraw
+:ClrHome
+:Text(20,32,FACTORV4")
+:Text(57,13,"MADE BY: Drew Chapin")
+:Pause
+:ClrHome
+:
+:AxesOn
+:DelVar A
+:DelVar B
+:DelVar C
+:DelVar D
+:DelVar E
+:DelVar F
+:DelVar G
+:DelVar H
+:DelVar M
+:DelVar R
+:DelVar W

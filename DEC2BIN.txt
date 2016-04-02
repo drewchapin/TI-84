@@ -1,0 +1,30 @@
+PROGRAM:DEC2BIN
+:ClrHome
+:
+:Input D
+:
+:16->X
+:0->A
+:
+:While D>0
+:
+:D/2->D
+:D-int(D)->A
+:int(D)->D
+:X-1->X
+:
+:If not(A=0):Then
+:Output(1,X,"1")
+:Else
+:Output(1,X,"0")
+:End
+:
+:End
+:
+:Pause
+:
+:ClrHome
+:
+:DelVar A
+:DelVar D
+:DelVar X
